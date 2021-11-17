@@ -26,14 +26,16 @@ document.onload = getDogImages();
 
 // Challenge 2 ***************************************************
 
+let breeds = [];
+
 function getDogBreeds() {
     const breedUrl = 'https://dog.ceo/api/breeds/list/all'
     
     fetch(breedUrl)
         .then(response => response.json())
         .then(results => {
-            for (const key in results.message) {
-                breedList(key)
+            for (const breed in results.message) {
+                breedList(breed)
             }
         })
 };
